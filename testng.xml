@@ -8,6 +8,11 @@
                     <include name="testScript"/>
                 </methods>
             </class>
+            <class name="com.lambdatest.SampleTestFF">
+                <methods>
+                    <include name="testScript"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
