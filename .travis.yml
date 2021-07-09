@@ -1,20 +1,17 @@
 sudo: required
 dist: trusty
 language: java
-addons:
-  apt:
-    packages:
-      - iproute2
+
 jdk:
   - oraclejdk8
 
 script:
-  - ip a
   - mvn clean install -DsuiteXmlFile=testng.xml
+
 before_install:
-  - docker pull elgalu/selenium
-  - docker pull dosel/zalenium
-  - docker run -d --name zalenium -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/videos:/home/seluser/videos --privileged dosel/zalenium start
+    - curl https://github.com/zalando/zalenium/blob/master/docs/docker/docker-compose.yaml > docker-compose.yaml
+    - docker-compose up -d --force-recreate
+    - docker-compose ps
 
 cache:
   directories:
