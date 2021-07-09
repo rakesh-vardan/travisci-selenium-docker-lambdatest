@@ -1,10 +1,15 @@
 sudo: required
 dist: trusty
 language: java
+addons:
+  apt:
+    packages:
+      - iproute2
 jdk:
   - oraclejdk8
 
 script:
+  - ip a
   - mvn clean install -DsuiteXmlFile=testng.xml
 before_install:
   - docker pull elgalu/selenium
