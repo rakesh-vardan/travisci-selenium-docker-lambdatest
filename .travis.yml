@@ -10,7 +10,7 @@ script:
 
 before_install:
     - curl https://raw.githubusercontent.com/zalando/zalenium/master/docs/docker/docker-compose.yaml > docker-compose.yaml
-    - docker-compose up -d --force-recreate
+    - docker-compose up --force-recreate
     - docker-compose ps
 
 cache:
