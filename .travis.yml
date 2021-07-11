@@ -9,7 +9,7 @@ script:
   - mvn clean install -DsuiteXmlFile=testng.xml
 
 before_install:
-    - curl https://github.com/zalando/zalenium/blob/master/docs/docker/docker-compose.yaml > docker-compose.yaml
+    - curl https://raw.githubusercontent.com/zalando/zalenium/master/docs/docker/docker-compose.yaml > docker-compose.yaml
     - docker-compose up -d --force-recreate
     - docker-compose ps
 
