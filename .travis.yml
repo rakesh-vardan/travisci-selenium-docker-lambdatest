@@ -10,7 +10,7 @@ script:
 
 before_install:
     - curl https://gist.githubusercontent.com/rakesh-vardan/0c8d52e8faa9999abc2548fdf2632994/raw/42489db358253cc4168a0d4b4b2da13187b45bba/docker-compose.yml > docker-compose.yaml
-    - docker-compose up --force-recreate
+    - docker-compose up -d --force-recreate
     - docker-compose ps
 
 cache:
