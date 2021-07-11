@@ -3,11 +3,11 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="travisci-selenium-docker-lambdatest">
         <classes>
-<!--            <class name="com.lambdatest.SampleTest">-->
-<!--                <methods>-->
-<!--                    <include name="testScript"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="com.lambdatest.SampleTest">
+                <methods>
+                    <include name="testScript"/>
+                </methods>
+            </class>
             <class name="com.lambdatest.SampleTestFF">
                 <methods>
                     <include name="testScript"/>

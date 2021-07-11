@@ -11,12 +11,16 @@ public class SampleTest {
 
     public RemoteWebDriver driver = null;
 
+    String username = System.getenv("LT_USERNAME") != null ? System.getenv("LT_USERNAME") : "test";
+    String accessKey = System.getenv("LT_ACCESS_KEY") != null ? System.getenv("LT_ACCESS_KEY") : "test";
+
     @Test
     public void testScript() {
         try {
 
             ChromeOptions options = new ChromeOptions();
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            driver = new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@hub.lambdatest.com/wd/hub"), options);
+//            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
             driver.get("https://lambdatest.github.io/sample-todo-app/");
             driver.findElement(By.name("li1")).click();
             driver.findElement(By.name("li2")).click();
