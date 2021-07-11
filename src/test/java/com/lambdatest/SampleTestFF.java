@@ -17,7 +17,7 @@ public class SampleTestFF {
         try {
 
             FirefoxOptions options = new FirefoxOptions();
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), options);
             driver.get("https://lambdatest.github.io/sample-todo-app/");
             driver.findElement(By.name("li1")).click();
             driver.findElement(By.name("li2")).click();
