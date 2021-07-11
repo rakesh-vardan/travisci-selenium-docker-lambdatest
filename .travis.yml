@@ -9,9 +9,9 @@ script:
   - mvn clean install -DsuiteXmlFile=testng.xml
 
 before_install:
-  - curl https://gist.githubusercontent.com/rakesh-vardan/c1dcf6531b826fad91f18c285d566a71/raw/ad90a18fe5e70f2d6aea06621b76d6e0329a4aab/docker-compose-sel.yml > docker-compose.yaml
-  - docker-compose up -d
-  - docker-compose ps
+  - docker pull elgalu/selenium
+  - docker pull dosel/zalenium
+  - docker run -d --name zalenium -p 4444:4444 -e LT_USERNAME=${LT_USERNAME} -e LT_ACCESS_KEY=${LT_ACCESS_KEY} -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/videos:/home/seluser/videos --privileged dosel/zalenium start --lambdaTestEnabled true
 
 cache:
   directories:
