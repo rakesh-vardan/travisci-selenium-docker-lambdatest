@@ -10,7 +10,7 @@ before_script:
   - docker-compose ps
 
 script:
-  - mvn clean install -DsuiteXmlFile=testng.xml -Dbrowser=GRID_CHROME -DgridHubURL=http://localhost:4442/wd/hub
+  - mvn clean install -DsuiteXmlFile=testng.xml -Dbrowser=GRID_CHROME -DgridHubURL=http://localhost:4444/wd/hub
 
 cache:
   directories:
