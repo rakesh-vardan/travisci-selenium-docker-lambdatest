@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="travisci-selenium-docker-lambdatest">
+    <test verbose="2" name="travisci-selenium-docker-lambdatest">
+        <parameter name="browser" value="GRID_CHROME">
+            <parameter name="gridHubURL"
+                       value="http://localhost:4444/wd/hub"/>
+        </parameter>
         <classes>
-            <class name="com.lambdatest.SampleTest">
+            <class name="com.lambdatest.SeleniumTests">
                 <methods>
-                    <include name="testScript"/>
-                </methods>
-            </class>
-            <class name="com.lambdatest.SampleTestFF">
-                <methods>
-                    <include name="testScript"/>
+                    <include name="verifyHeader1"/>
+                    <include name="verifyHeader2"/>
+                    <include name="verifyFirstElementBehavior"/>
+                    <include name="verifySecondElementBehavior"/>
+                    <include name="verifyAddButtonBehavior"/>
                 </methods>
             </class>
         </classes>
