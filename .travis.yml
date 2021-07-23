@@ -9,7 +9,7 @@ before_script:
   - docker ps
 
 script:
-  - mvn clean install -DsuiteXmlFile=testng.xml -Dbrowser=GRID_FIREFOX -DgridHubURL=http://localhost:4446/wd/hub
+  - mvn clean install -DsuiteXmlFile=testng.xml -Dbrowser=GRID_FIREFOX -DgridHubURL=http://localhost:4444/wd/hub
 
 cache:
   directories:
