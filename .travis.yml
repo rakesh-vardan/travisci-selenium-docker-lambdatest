@@ -20,7 +20,8 @@ deploy:
   provider: releases
   api_key: ${api_key}
   skip_cleanup: true
-  file: "target/surefire-reports/emailable-report.html"
+  file: [ "target/surefire-reports/emailable-report.html",
+          "target/surefire-reports/index.html" ]
   on:
     all_branches: true
     tags: false
