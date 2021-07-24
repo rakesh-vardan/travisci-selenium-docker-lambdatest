@@ -5,14 +5,23 @@ jdk:
   - oraclejdk8
 
 before_script:
-  - curl https://gist.githubusercontent.com/rakesh-vardan/f23ab04fe12512dc6f8ceb20d738f1ad/raw/736edd8a8e7f7276535e253a688e6625cdfd7abb/docker-compose-zel.yml > docker-compose.yml
-  - docker-compose up -d --force-recreate
-  - docker-compose ps
+  - docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-firefox:4.0.0-rc-1-prerelease-20210618
+  - docker ps
 
 script:
-  - mvn clean install -DsuiteXmlFile=${suiteXmlFile} -Dbrowser=${browser} -DgridHubURL=${gridHubURL}
+  - mvn clean install -DsuiteXmlFile=testng.xml -Dbrowser=GRID_FIREFOX -DgridHubURL=http://localhost:4444/wd/hub
 
 cache:
   directories:
     - .autoconf
     - $HOME/.m2
+
+deploy:
+  provider: releases
+  api_key: ${api_key}
+  skip_cleanup: true
+  file: [ "target/surefire-reports/emailable-report.html",
+          "target/surefire-reports/index.html" ]
+  on:
+    all_branches: true
+    tags: false
