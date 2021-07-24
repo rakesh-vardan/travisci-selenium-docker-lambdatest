@@ -8,6 +8,7 @@ before_script:
   - docker pull elgalu/selenium
   - docker pull dosel/zalenium
   - docker run -d --name zalenium -p 4444:4444 -e LT_USERNAME=${LT_USERNAME} -e LT_ACCESS_KEY=${LT_ACCESS_KEY} -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/videos:/home/seluser/videos --privileged dosel/zalenium start --lambdaTestEnabled true
+  - docker ps
 
 script:
   - mvn clean install -DsuiteXmlFile=${suiteXmlFile} -Dbrowser=${browser} -DgridHubURL=${gridHubURL}
