@@ -5,9 +5,9 @@ jdk:
   - oraclejdk8
 
 before_script:
-  - curl https://gist.githubusercontent.com/rakesh-vardan/75ab725c9e907772eacb7396383ecd84/raw/4ab799e94cdb9eeaca63528eda97e2d1990f5bc7/docker-compose-zal.yml > docker-compose.yml
-  - docker-compose up -d --force-recreate
-  - docker-compose ps
+  - docker pull elgalu/selenium
+  - docker pull dosel/zalenium
+  - docker run -d --name zalenium -p 4444:4444 -e LT_USERNAME=${LT_USERNAME} -e LT_ACCESS_KEY=${LT_ACCESS_KEY} -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/videos:/home/seluser/videos --privileged dosel/zalenium start --lambdaTestEnabled true
 
 script:
   - mvn clean install -DsuiteXmlFile=${suiteXmlFile} -Dbrowser=${browser} -DgridHubURL=${gridHubURL}
