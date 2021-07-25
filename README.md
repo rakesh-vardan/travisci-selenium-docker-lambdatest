@@ -6,7 +6,7 @@ Please refer to the files to be used for each example.
 
 ## 1. Tests with Docker Selenium and Travis CI
 ### Using Docker Images
-- [.travis.yaml](https://gist.github.com/rakesh-vardan/9e0661ddfd0d4e7ad3b52c7c13d320e6#file-docker-travis-yml)
+- [.travis.yml](https://gist.github.com/rakesh-vardan/9e0661ddfd0d4e7ad3b52c7c13d320e6#file-docker-travis-yml)
 
 ### Using Docker-Compose 
 - [docker-compose.yml](https://gist.github.com/rakesh-vardan/c1dcf6531b826fad91f18c285d566a71#file-docker-compose-sel-yml)
@@ -18,7 +18,7 @@ Please refer to the files to be used for each example.
 
 ### Using Docker-Compose
 - [docker-compose.yml](https://gist.github.com/rakesh-vardan/75ab725c9e907772eacb7396383ecd84#file-docker-compose-zal-yml)
-- [.travis.yaml](https://gist.github.com/rakesh-vardan/f6684e477e14882b8430864839c8c7fe#file-travisyaml-with-zal-dc-yml)
+- [.travis.yml](https://gist.github.com/rakesh-vardan/f6684e477e14882b8430864839c8c7fe#file-travisyaml-with-zal-dc-yml)
 
 ## 3. Tests with LambdaTest and Travis CI
 ### Using Docker Images
