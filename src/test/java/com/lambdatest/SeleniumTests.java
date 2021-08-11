@@ -17,18 +17,24 @@ public class SeleniumTests extends BaseTest {
 
     @Test(priority = 1)
     public void verifyHeader1() {
+        System.out.println("Test Case One in " + getClass().getSimpleName()
+                + " with Thread Id:- " + Thread.currentThread().getId());
         String headerText = driver.findElement(By.xpath("//h2")).getText();
         assertThat(headerText).isEqualTo("LambdaTest Sample App");
     }
 
     @Test(priority = 2)
     public void verifyHeader2() {
+        System.out.println("Test Case Two in " + getClass().getSimpleName()
+                + " with Thread Id:- " + Thread.currentThread().getId());
         String text = driver.findElement(By.xpath("//h2/following-sibling::div/span")).getText();
         assertThat(text).isEqualTo("5 of 5 remaining");
     }
 
     @Test(priority = 3)
     public void verifyFirstElementBehavior() {
+        System.out.println("Test Case Three in " + getClass().getSimpleName()
+                + " with Thread Id:- " + Thread.currentThread().getId());
         WebElement firstElementText = driver.findElement(By.xpath("//input[@name='li1']/following-sibling::span[@class='done-false']"));
         assertThat(firstElementText.isDisplayed()).isTrue();
         assertThat(firstElementText.getText()).isEqualTo("First Item");
@@ -42,10 +48,13 @@ public class SeleniumTests extends BaseTest {
 
         String text = driver.findElement(By.xpath("//h2/following-sibling::div/span")).getText();
         assertThat(text).isEqualTo("4 of 5 remaining");
+
     }
 
     @Test(priority = 4)
     public void verifySecondElementBehavior() {
+        System.out.println("Test Case Four in " + getClass().getSimpleName()
+                + " with Thread Id:- " + Thread.currentThread().getId());
         WebElement secondElementText = driver.findElement(By.xpath("//input[@name='li2']/following-sibling::span[@class='done-false']"));
         assertThat(secondElementText.isDisplayed()).isTrue();
         assertThat(secondElementText.getText()).isEqualTo("Second Item");
@@ -63,6 +72,8 @@ public class SeleniumTests extends BaseTest {
 
     @Test(priority = 5)
     public void verifyAddButtonBehavior() {
+        System.out.println("Test Case Five in " + getClass().getSimpleName()
+                + " with Thread Id:- " + Thread.currentThread().getId());
         driver.findElement(By.id("sampletodotext")).clear();
         driver.findElement(By.id("sampletodotext")).sendKeys("Yey, Let's add it to list");
         driver.findElement(By.id("addbutton")).click();
