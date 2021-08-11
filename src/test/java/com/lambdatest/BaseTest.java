@@ -6,7 +6,8 @@ import org.testng.annotations.*;
 
 public class BaseTest {
 
-    protected WebDriver driver;
+    protected ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+//    protected WebDriver driver;
 
     @BeforeSuite
     public void beforeSuite() {
@@ -21,12 +22,17 @@ public class BaseTest {
     @BeforeTest
     @Parameters({"browser", "gridHubURL"})
     public void beforeTest(String browser, String gridHubURL, ITestContext testContext) {
-        driver = BrowserFactory.createInstance(browser, gridHubURL);
-        testContext.setAttribute("driver", driver);
+        driver.set(BrowserFactory.createInstance(browser, gridHubURL));
+        testContext.setAttribute("driver", getDriver());
     }
 
     @AfterTest
     public void afterTest() {
-        driver.quit();
+        getDriver().quit();
+    }
+
+    public WebDriver getDriver()
+    {
+        return driver.get();
     }
 }

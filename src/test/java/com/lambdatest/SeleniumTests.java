@@ -1,6 +1,7 @@
 package com.lambdatest;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -10,8 +11,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SeleniumTests extends BaseTest {
 
+    private WebDriver driver;
+
     @BeforeTest
     public void setUp() {
+        driver = getDriver();
         driver.get("https://lambdatest.github.io/sample-todo-app/");
     }
 
