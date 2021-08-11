@@ -55,6 +55,14 @@ public class BrowserFactory {
                     e.printStackTrace();
                 }
                 break;
+            case GRID_LAMBDATEST_FIREFOX:
+                try {
+                    FirefoxOptions options = new FirefoxOptions();
+                    driver = new RemoteWebDriver(new URL("https://" + getUsername() + ":" + getAccessKey() + "@hub.lambdatest.com/wd/hub"), options);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                break;
             case LOCAL_CHROME:
             default:
                 WebDriverManager.chromedriver().setup();
