@@ -11,7 +11,7 @@ before_script:
   - docker ps
 
 script:
-  - mvn clean install -DsuiteXmlFile=${suiteXmlFile} -Dbrowser=${browser} -DgridHubURL=${gridHubURL}
+  - mvn clean install -DsuiteXmlFile=${suiteXmlFile} -DgridHubURL=${gridHubURL}
 
 cache:
   directories:
