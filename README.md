@@ -27,3 +27,7 @@ Please refer to the files to be used for each example.
 ### Using Docker-Compose
 - [docker-compose.yml](https://gist.github.com/rakesh-vardan/f23ab04fe12512dc6f8ceb20d738f1ad#file-docker-compose-zel-yml)
 - [.travis.yml](https://gist.github.com/rakesh-vardan/819781fba7a2779235d55cbceb474858#file-travisyaml-with-zel-dc-yml)
+
+## 4. Running Parallel Tests with Docker, LambdaTest and Travis CI
+- [testng-parallel.xml](https://gist.github.com/rakesh-vardan/18138de20dd10efe3b0c94a959c2e671#file-testng-parallel-xml)
+- [.travis.yml](https://gist.github.com/rakesh-vardan/7ac7400f6d73ef8123027516e3d660ff#file-travisyaml-parallel-test-yml)
