@@ -1,20 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite in parallel" parallel="methods" thread-count="4">
+<suite name="All Test Suite in parallel" parallel="tests" thread-count="2">
     <test verbose="2" name="travisci-selenium-docker-lambdatest">
-        <parameter name="browser" value="GRID_CHROME">
-            <parameter name="gridHubURL"
-                       value="http://localhost:4444/wd/hub"/>
-        </parameter>
+        <parameter name="browser" value="GRID_LAMBDATEST_CHROME"/>
+        <parameter name="gridHubURL" value="http://localhost:4444/wd/hub"/>
         <classes>
             <class name="com.lambdatest.SeleniumTests">
-                <methods>
-                    <include name="verifyHeader1"/>
-                    <include name="verifyHeader2"/>
-                    <include name="verifyFirstElementBehavior"/>
-                    <include name="verifySecondElementBehavior"/>
-                    <include name="verifyAddButtonBehavior"/>
-                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" name="travisci-selenium-docker-lambdatest1">
+        <parameter name="browser" value="GRID_LAMBDATEST_FIREFOX"/>
+        <parameter name="gridHubURL" value="http://localhost:4444/wd/hub"/>
+        <classes>
+            <class name="com.lambdatest.SeleniumTests">
             </class>
         </classes>
     </test>

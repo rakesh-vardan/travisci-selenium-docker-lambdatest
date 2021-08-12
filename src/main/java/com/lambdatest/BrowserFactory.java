@@ -74,11 +74,11 @@ public class BrowserFactory {
     }
 
     private static String getAccessKey() {
-        return System.getenv("LT_ACCESS_KEY") != null ? System.getenv("LT_ACCESS_KEY") : "xr3lIeM4tq4KdDKowUlrkkJftz7ixT2kFtI1OT33T4QS0suGhH";
+        return System.getenv("LT_ACCESS_KEY") != null ? System.getenv("LT_ACCESS_KEY") : "accesskey";
     }
 
     private static String getUsername() {
-        return System.getenv("LT_USERNAME") != null ? System.getenv("LT_USERNAME") : "rakeshbudugu";
+        return System.getenv("LT_USERNAME") != null ? System.getenv("LT_USERNAME") : "username";
     }
 
 }
