@@ -1,6 +1,6 @@
 # Instructions
 
-This is an example project from the [blog]() published on LambdaTest. 
+This is an example project from the [blog](https://www.lambdatest.com/blog/ci-cd-pipeline-with-travis-ci-docker-and-lambdatest/) published on LambdaTest. 
 
 Please refer to the files to be used for each example.
 
